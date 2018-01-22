@@ -12,11 +12,11 @@ You are encouraged to cite the following paper if it helps your research.
 
 
 	@inproceedings{wu2017deep,
-  title={Deep Face Recognition with Center Invariant Loss},
-  author={Wu, Yue and Liu, Hongfu and Li, Jun and Fu, Yun},
-  booktitle={Proceedings of the on Thematic Workshops of ACM Multimedia 2017},
-  pages={408--414},
-  year={2017},
-  organization={ACM}
-}
+		title={Deep Face Recognition with Center Invariant Loss},
+		 author={Wu, Yue and Liu, Hongfu and Li, Jun and Fu, Yun},
+		booktitle={Proceedings of the on Thematic Workshops of ACM Multimedia 2017},   
+		pages={408--414},
+		year={2017},
+		organization={ACM}
+	}
 
