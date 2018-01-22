@@ -330,7 +330,7 @@ layer {
   bottom: "label"
   top: "center_loss"
   param {
-    lr_mult: 1
+    lr_mult: 1 
     decay_mult: 0
   }
   center_loss_param {
@@ -338,6 +338,9 @@ layer {
     center_filler {
       type: "xavier"
     }
+    source: 'mnist_example/label.num'
+
   }
-  loss_weight: 0.01
+loss_weight: 0.00001
 }
+
