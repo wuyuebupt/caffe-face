@@ -5,7 +5,7 @@ This branch is developed for the mnist toy model in the paper "Deep Face Recogni
 ### Updates
 
 ### Contact 
-- [Yu Wu](http://www1.ece.neu.edu/~yuewu/)
+- [Yue Wu](http://www1.ece.neu.edu/~yuewu/)
 
 ### Citation
 You are encouraged to cite the following paper if it helps your research. 
