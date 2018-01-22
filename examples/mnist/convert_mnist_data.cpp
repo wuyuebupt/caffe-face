@@ -33,6 +33,8 @@ using namespace caffe;  // NOLINT(build/namespaces)
 using boost::scoped_ptr;
 using std::string;
 
+
+using namespace std;
 DEFINE_string(backend, "lmdb", "The backend for storing the result");
 
 uint32_t swap_endian(uint32_t val) {
@@ -87,9 +89,19 @@ void convert_dataset(const char* image_filename, const char* label_filename,
   datum.set_width(cols);
   LOG(INFO) << "A total of " << num_items << " items.";
   LOG(INFO) << "Rows: " << rows << " Cols: " << cols;
+  
+
+  int* countlimit = new int[10];
+  for (int i = 0; i < 10; i++){
+	countlimit[i]=0;
+  }
   for (int item_id = 0; item_id < num_items; ++item_id) {
     image_file.read(pixels, rows * cols);
     label_file.read(&label, 1);
+    int intlabel = int(label);
+    cout << intlabel << endl;
+    cout << item_id << endl;
+    if (countlimit[intlabel] <  1000 || intlabel > 4){
     datum.set_data(pixels, rows*cols);
     datum.set_label(label);
     string key_str = caffe::format_int(item_id, 8);
@@ -100,6 +112,8 @@ void convert_dataset(const char* image_filename, const char* label_filename,
     if (++count % 1000 == 0) {
       txn->Commit();
     }
+	countlimit[intlabel] += 1;
+	}
   }
   // write the last batch
   if (count % 1000 != 0) {
